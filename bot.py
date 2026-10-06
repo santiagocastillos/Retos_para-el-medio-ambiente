@@ -16,7 +16,11 @@ async def on_ready():
 
 @bot.command()
 async def hola(ctx):
-    await ctx.send('Hola, soy tu bot retador, te dare retos para no contaminar el medio ambiente, si quieres un reto escribe "$reto".')
+    await ctx.send('Hola, soy 13298 y sere tu bot retador, si queres más información escribe "$info".')
+
+@bot.command()
+async def info(ctx):
+    await ctx.send('Yo te enviare retos para no contaminar el medio ambiente y los vas a completar,si quieres un reto escribe "$reto".')
 
 @bot.command()
 async def reto(ctx):
@@ -24,10 +28,5 @@ async def reto(ctx):
     with open(f'Retos/{retos}', 'r') as f:
         retos = f.read()
     await ctx.send(retos)
-
-@bot.command()
-async def r_completados(ctx):
-    r_compt = os.listdir('Rs_Completados')
-    await ctx.send(r_compt)
 
 bot.run("Token <---")
